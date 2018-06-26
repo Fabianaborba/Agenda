@@ -9,15 +9,15 @@ typedef struct {
 	short id;
 } Registro;
 
-Registro criaContato(Registro *r, int tamanho) {
+void criaContato(Registro student[], int posicao) {
 	
 	printf("Entre o nome do contato: ");
-	scanf("%s", (*r[tamanho]).nome);
+	scanf("%s", student[posicao].nome);
 
 	printf("Entre a idade do contato: ");
-	scanf("%d", (*r[tamanho]).idade);
+	scanf("%d", &student[posicao].idade);
 	
 	printf("Entre o telefone do contato: ");
-	scanf("%s", (*r[tamanho]).telefone);
+	scanf("%s", student[posicao].telefone);
 	
 }
