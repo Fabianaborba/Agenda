@@ -63,6 +63,7 @@ int main (int argc, char*argv[]){
       Registro alunos[40];
       int escolha = 0;
       int id = 0;
+      int i;
       FILE *arquivo;
       char *nome_arquivo = "dados.bin";
       int tamanho = 0;
@@ -76,6 +77,12 @@ int main (int argc, char*argv[]){
 		puts("Sem arquivo!");
 	  }
 	  
+	  /*
+	  for (i = 0; i <= 39; i++){
+          strcpy(alunos[i].nome, "Alunos");
+          alunos[i].idade = 0;
+	      strcpy(alunos[i].telefone, "11223344");
+      }*/
 	  
       do {
          system("cls");
