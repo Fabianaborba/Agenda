@@ -27,8 +27,8 @@ void criaContato(Registro student[], int posicao) {
 void listaContato(Registro student[], int tamanho) {
     system("cls");
 	printf("Contatos %d\n", tamanho);
-	printf("Nome\tIdade\tTelefone\n");
-	printf("%s\t%d\t%s\n", student[tamanho].nome, student[tamanho].idade, student[tamanho].telefone);
+	printf("ID\tNome\tIdade\tTelefone\n");
+	printf("%d\t%s\t%d\t%s\n", tamanho, student[tamanho].nome, student[tamanho].idade, student[tamanho].telefone);
 	system("pause");
 }
 
@@ -36,13 +36,10 @@ void listarTodos(Registro student[]) {
     system("cls");
     int i;
 	//printf("Contatos %d\n", tamanho);
-	printf("Nome\tIdade\tTelefone\n");
+	printf("ID\tNome\tIdade\tTelefone\n");
 	for (i = 0; i < 40; i++){
         if (student[i].idade != 0){
-	       printf("%s\t%d\t%s\n", student[i].nome, student[i].idade, student[i].telefone);
-        }
-        else {
-           break;
+	       printf("%d\t%s\t%d\t%s\n", i, student[i].nome, student[i].idade, student[i].telefone);
         }
      }
 	system("pause");
