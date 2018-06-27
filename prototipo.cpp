@@ -14,9 +14,11 @@ void criaContato(Registro student[], int posicao) {
     	
 	printf("Entre o nome do contato: ");
 	scanf("%s", student[posicao].nome);
-
-	printf("Entre a idade do contato: ");
-	scanf("%d", &student[posicao].idade);
+	
+    do {
+    	printf("Entre a idade do contato: ");
+    	scanf("%d", &student[posicao].idade);
+    } while (student[posicao].idade == 0); 
 	
 	printf("Entre o telefone do contato: ");
 	scanf("%s", student[posicao].telefone);
