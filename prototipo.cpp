@@ -7,7 +7,6 @@ typedef struct {
 	char telefone[14];
 	char nome[50];
 	int idade;
-	short id;
 } Registro;
 
 void criaContato(Registro student[], int posicao) {
@@ -27,14 +26,25 @@ void criaContato(Registro student[], int posicao) {
 
 void listaContato(Registro student[], int tamanho) {
     system("cls");
-	int i;
-	puts("Lista de Contatos\n");
-	puts("Nome\tIdade\tTelefone\n");
-	
-	for (i = 0; i <= tamanho; i++) {
-		printf("%s\t%d\t%s\n", student[i].nome, student[i].idade, student[i].telefone);
-	}
-	
+	printf("Contatos %d\n", tamanho);
+	printf("Nome\tIdade\tTelefone\n");
+	printf("%s\t%d\t%s\n", student[tamanho].nome, student[tamanho].idade, student[tamanho].telefone);
+	system("pause");
+}
+
+void listarTodos(Registro student[]) {
+    system("cls");
+    int i;
+	//printf("Contatos %d\n", tamanho);
+	printf("Nome\tIdade\tTelefone\n");
+	for (i = 0; i < 40; i++){
+        if (student[i].idade != 0){
+	       printf("%s\t%d\t%s\n", student[i].nome, student[i].idade, student[i].telefone);
+        }
+        else {
+           break;
+        }
+     }
 	system("pause");
 }
 
@@ -43,9 +53,9 @@ void excluiContato(Registro student[], int posicao){
      
      student[posicao].idade = 0;
      
-     memset(&student[posicao].nome, 0 ,sizeof(student[posicao].nome));
+     memset(&student[posicao].nome, 0,sizeof(student[posicao].nome));
      
-     memset(&student[posicao].telefone, 0 ,sizeof(student[posicao].telefone));
+     memset(&student[posicao].telefone, 0,sizeof(student[posicao].telefone));
 
 }
 
@@ -73,6 +83,7 @@ int main (int argc, char*argv[]){
          printf ("\n2-Listar contato: ");
          printf ("\n3-Excluir contato: ");
          printf ("\n4-Editar contato: ");
+         printf ("\n5-Listar todos");
          printf ("\n0 - Sair");
          printf ("\nInforme a operação desejada: ");
          scanf ("%d", &escolha);
@@ -97,8 +108,8 @@ int main (int argc, char*argv[]){
                scanf ("%d", &id); 
 			   criaContato(alunos, id);
 			   break;
-		   case 0:
-                printf ("Finalizando");
+		   case 5:
+                listarTodos(alunos);
                 break;
            default:
 			   puts("Opcao invalida!\n");

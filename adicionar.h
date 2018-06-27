@@ -26,7 +26,7 @@ void criaContato(Registro student[], int posicao) {
 	
 }
 
-void listaContato(Registro student[], int tamanho) {
+void listarTodos(Registro student[], int tamanho) {
 	int i;
 	puts("Lista de Contatos\n");
 	puts("ID\tNome\tIdade\tTelefone\n");
@@ -43,3 +43,24 @@ void excluiContato(Registro student[], int posicao){
      
      memset(&student[posicao].telefone, 0 ,sizeof(student[posicao].telefone));
 }
+
+void listaContato(Registro student[], int tamanho) {
+    system("cls");
+	printf("Contatos %d\n", tamanho);
+	printf("Nome\tIdade\tTelefone\n");
+	printf("%s\t%d\t%s\n", student[tamanho].nome, student[tamanho].idade, student[tamanho].telefone);
+	system("pause");
+}
+
+void excluiContato(Registro student[], int posicao){
+     system("cls");
+     
+     student[posicao].idade = 0;
+     
+     memset(&student[posicao].nome, 0,sizeof(student[posicao].nome));
+     
+     memset(&student[posicao].telefone, 0,sizeof(student[posicao].telefone));
+
+}
+
+
