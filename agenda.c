@@ -38,7 +38,6 @@ void criaContato(Registro r[], int *tamanho) {
 }
 
 void listaContatos(Registro r[], int *tamanho) {
-	clear();
 	int tam = *tamanho;
 	int i;
 	puts("Lista de Contatos\n");
